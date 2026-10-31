@@ -95,11 +95,12 @@ body {
 /* Keep summary cards at their natural height */
 .dashboard-summary {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 0.666fr));
     gap: 5px;
     margin: 5px 0 0 0;
     padding: 0;
     align-items: start;
+    min-width: 0;
 }
 
 .trace-section {
@@ -343,10 +344,10 @@ body {
 .control-row {
     display: grid;
     grid-template-columns:
-        minmax(100px, 0.8fr)
-        minmax(140px, 1.1fr)
-        minmax(150px, 1fr)
-        minmax(0, 1.5fr)
+        minmax(60px, 0.66fr)
+        minmax(85px, 0.66fr)
+        minmax(85px, 0.66fr)
+        minmax(0, 2.1fr)
         minmax(110px, 0.8fr);
     gap: 8px;
     align-items: end;
