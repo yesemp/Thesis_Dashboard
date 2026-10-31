@@ -342,10 +342,16 @@ body {
 
 .control-row {
     display: grid;
-    grid-template-columns: 135px 185px 200px max-content minmax(120px, 1fr);
-    gap: 10px;
+    grid-template-columns:
+        minmax(100px, 0.8fr)
+        minmax(140px, 1.1fr)
+        minmax(150px, 1fr)
+        minmax(0, 1.5fr)
+        minmax(110px, 0.8fr);
+    gap: 8px;
     align-items: end;
     width: 100%;
+    min-width: 0;
     margin: 0;
     padding: 0;
 }
@@ -1171,15 +1177,18 @@ body {
 
 .view-selector {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 8px;
+    margin-left: 0;
+    min-width: 0;
 }
 
 /* Prediction task */
 .control-row .control-group:has(#taskSelector) {
-    flex: 0 0 140px;
-    width: 140px;
+    width: 100%;
+    min-width: 0;
 }
 
 #taskSelector {
@@ -1190,6 +1199,32 @@ body {
 #variantSelector {
     width: 100%;
     box-sizing: border-box;
+}
+
+/* Responsive dashboard controls */
+@media (max-width: 1200px) {
+    .control-row {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1.3fr)
+            minmax(0, 1.2fr);
+    }
+
+    .control-row .color-guide {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 700px) {
+    .control-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 450px) {
+    .control-row {
+        grid-template-columns: minmax(0, 1fr);
+    }
 }
 
 </style>
